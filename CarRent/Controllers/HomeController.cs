@@ -12,8 +12,24 @@ namespace CarRent.Controllers
         public ActionResult Index()
         {
             Context con = new Context();
-            
             return View();
         }
+
+        public ActionResult AddCarType()
+        {
+            CarType type = new CarType();
+            return View(type);
+        }
+
+        [HttpPost]
+        public ActionResult AddCarType(CarType i_carType)
+        {
+            Context con = new Context();
+            con.CarTypes.Add(i_carType);
+            con.SaveChanges();
+            return View("index");
+        }
+
+
     }
 }
