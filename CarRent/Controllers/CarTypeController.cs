@@ -16,5 +16,21 @@ namespace CarRent.Controllers
             return View(con.CarTypes);
         }
 
+        
+        public ActionResult Delete(CarType i_carType)
+        {
+            using (Context context = new Context())
+            {
+                CarType carTypeToDelete = context.CarTypes.Where(ct => ct.Id == i_carType.Id).FirstOrDefault();
+                if (carTypeToDelete!=null)
+                {
+                    context.CarTypes.Attach(carTypeToDelete);
+                    context.CarTypes.Remove(carTypeToDelete);
+                    context.SaveChanges();
+                }
+            }
+            return RedirectToAction("index");
+        }
+
     }
 }

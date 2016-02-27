@@ -15,12 +15,6 @@ namespace CarRent.Controllers
             return View();
         }
 
-        public ActionResult DisplayAllCarType()
-        {
-            Context con = new Context();
-            return View(con.CarTypes);
-        }
-
         [HttpPost]
         public ActionResult AddCarType(CarType i_carType)
         {
