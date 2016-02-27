@@ -10,6 +10,7 @@ namespace CarRent.Controllers
     public class LocationController : Controller
     {
         // GET: Location
+       
         public ActionResult DisplayAllLocation()
         {
             Context con = new Context();
@@ -25,12 +26,16 @@ namespace CarRent.Controllers
         [HttpPost]
         public ActionResult AddLocation(Location i_location)
         {
-            using (Context con = new Context())
+            if (ModelState.IsValid)
             {
-                con.Locations.Add(i_location);
-                con.SaveChanges();
+                using (Context con = new Context())
+                {
+                    con.Locations.Add(i_location);
+                    con.SaveChanges();
+                }
+                return RedirectToAction("DisplayAllLocation");
             }
-            return RedirectToAction("DisplayAllLocation");
+            return View(i_location);
         }
 
         public ActionResult Delete(Location i_locationId )

@@ -6,12 +6,23 @@ using System.Web;
 
 namespace CarRent.Models
 {
+    [MetadataType(typeof(LocationMetadata))]
     public partial class Location
     {
-        [Key]
-        public int Id { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
-        public string Addreass { get; set; }
     }
+
+    public partial class LocationMetadata
+    {
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "Latitude is required")]
+        public double Latitude { get; set; }
+        [Required(ErrorMessage = "Longitude is required")]
+        public double Longitude { get; set; }
+        [Required(ErrorMessage = "Addreass is required")]
+        public string Addreass { get; set; }
+
+    }
+
+
 }

@@ -155,12 +155,17 @@
     <Compile Include="Migrations\201601091534309_second.Designer.cs">
       <DependentUpon>201601091534309_second.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602272030041_adding_metadata_Location.cs" />
+    <Compile Include="Migrations\201602272030041_adding_metadata_Location.Designer.cs">
+      <DependentUpon>201602272030041_adding_metadata_Location.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Branch.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\CarType.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationMetadata.cs" />
     <Compile Include="Models\Rent.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserMetadata.cs" />
@@ -202,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201601091534309_second.resx">
       <DependentUpon>201601091534309_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602272030041_adding_metadata_Location.resx">
+      <DependentUpon>201602272030041_adding_metadata_Location.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

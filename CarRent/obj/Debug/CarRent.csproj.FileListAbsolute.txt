@@ -51,3 +51,4 @@ C:\Users\ggriva\Documents\Visual Studio 2013\Projects\Project2\CarRent\CarRent\o
 C:\Users\ggriva\Documents\Visual Studio 2013\Projects\Project2\CarRent\CarRent\obj\Debug\CarRent.Migrations.first.resources
 C:\Users\ggriva\Documents\Visual Studio 2013\Projects\Project2\CarRent\CarRent\obj\Debug\CarRent.csproj.GenerateResource.Cache
 C:\Users\ggriva\Documents\Visual Studio 2013\Projects\Project2\CarRent\CarRent\obj\Debug\CarRent.Migrations.second.resources
+C:\Users\ggriva\Documents\Visual Studio 2013\Projects\Project2\CarRent\CarRent\obj\Debug\CarRent.Migrations.adding_metadata_Location.resources
