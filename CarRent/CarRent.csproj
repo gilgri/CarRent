@@ -183,6 +183,7 @@
     <Content Include="Views\Home\displayAllCarType.cshtml" />
     <Content Include="Views\Home\DisplayAllBranchs.cshtml" />
     <Content Include="Views\Location\DisplayAllLocation.cshtml" />
+    <Content Include="Views\Location\AddLocation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
