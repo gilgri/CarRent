@@ -191,7 +191,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\AddCarType.cshtml" />
-    <Content Include="Views\Home\displayAllCarType.cshtml" />
+    <Content Include="Views\CarType\index.cshtml" />
     <Content Include="Views\Home\DisplayAllBranchs.cshtml" />
     <Content Include="Views\Location\DisplayAllLocation.cshtml" />
     <Content Include="Views\Location\AddLocation.cshtml" />
@@ -206,7 +206,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\CarType\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201601091516315_first.resx">

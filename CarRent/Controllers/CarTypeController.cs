@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRent.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,9 @@ namespace CarRent.Controllers
         // GET: CarType
         public ActionResult Index()
         {
-            return View();
+            Context con = new Context();
+            return View(con.CarTypes);
         }
+
     }
 }
