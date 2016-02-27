@@ -36,11 +36,7 @@ namespace CarRent.Controllers
             return View(con.Branchs);
         }
 
-        public ActionResult DisplayAllLocation()
-        {
-            Context con = new Context();
-            return View(con.Locations);
-        }
+
 
     }
 }
