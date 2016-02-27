@@ -15,11 +15,13 @@ namespace CarRent.Controllers
             Context con = new Context();
             return View(con.Locations);
         }
+
         public ActionResult AddLocation()
         {
             Location location = new Location();
             return View(location);
         }
+
         [HttpPost]
         public ActionResult AddLocation(Location i_location)
         {
@@ -49,6 +51,27 @@ namespace CarRent.Controllers
         public ActionResult Details(Location i_locationId)
         {
             Location location = GetLocationById(i_locationId.Id);
+            return View(location);
+        }
+
+        public ActionResult Edit(Location i_location)
+        {
+            if (Request.HttpMethod== "POST")
+            {
+                using (Context con = new Context())
+                {
+                    Location loc = con.Locations.Where(l => l.Id == i_location.Id).FirstOrDefault();
+                    if (loc !=null )
+                    {
+                        loc.Addreass = i_location.Addreass;
+                        loc.Latitude = i_location.Latitude;
+                        loc.Longitude = i_location.Longitude;
+                    }
+                    con.SaveChanges();
+                    return RedirectToAction("DisplayAllLocation");
+                }
+            }
+            Location location = GetLocationById(i_location.Id);
             return View(location);
         }
 
