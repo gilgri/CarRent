@@ -46,6 +46,12 @@ namespace CarRent.Controllers
             return RedirectToAction("DisplayAllLocation");
         }
 
+        public ActionResult Details(Location i_locationId)
+        {
+            Location location = GetLocationById(i_locationId.Id);
+            return View(location);
+        }
+
         private Location GetLocationById(int i_locationId)
         {
             using (Context con = new Context())

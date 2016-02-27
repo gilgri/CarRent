@@ -184,6 +184,7 @@
     <Content Include="Views\Home\DisplayAllBranchs.cshtml" />
     <Content Include="Views\Location\DisplayAllLocation.cshtml" />
     <Content Include="Views\Location\AddLocation.cshtml" />
+    <Content Include="Views\Location\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
