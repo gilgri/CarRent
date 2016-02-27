@@ -15,8 +15,6 @@ namespace CarRent.Controllers
             Context con = new Context();
             return View(con.Locations);
         }
-
-
         public ActionResult AddLocation()
         {
             Location location = new Location();
@@ -33,5 +31,32 @@ namespace CarRent.Controllers
             return RedirectToAction("DisplayAllLocation");
         }
 
+        public ActionResult Delete(Location i_locationId )
+        {
+            using (Context con = new Context())
+            {
+                Location loactionToRemove= GetLocationById(i_locationId.Id);
+                if (loactionToRemove != null)
+                {
+                    con.Locations.Attach(loactionToRemove);
+                    con.Locations.Remove(loactionToRemove);
+                    con.SaveChanges();
+                }
+            }
+            return RedirectToAction("DisplayAllLocation");
+        }
+
+        private Location GetLocationById(int i_locationId)
+        {
+            using (Context con = new Context())
+            {
+                Location location = con.Locations.Where(l => l.Id == i_locationId).FirstOrDefault();
+                if (location!=null)
+                {
+                    return location;
+                }
+                return null;
+            }
+        }
     }
 }
