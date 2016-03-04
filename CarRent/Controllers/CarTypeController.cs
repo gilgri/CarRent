@@ -49,5 +49,25 @@ namespace CarRent.Controllers
             return RedirectToAction("index");
         }
 
+        public ActionResult Details(CarType i_carType)
+        {
+            CarType carT = new CarType();
+            carT = GetCarTypeById(i_carType.Id);
+            if (carT !=null)
+            {
+                return View(carT);
+            }
+            return RedirectToAction("index");
+        }
+
+        private CarType GetCarTypeById(int i_carTypeId)
+        {
+            using (Context con = new Context())
+            {
+                CarType ret_carT = new CarType();
+                ret_carT= con.CarTypes.Where(carT => carT.Id == i_carTypeId).FirstOrDefault();
+                return ret_carT;
+            }
+        }
     }
 }
