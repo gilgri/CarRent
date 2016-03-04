@@ -60,6 +60,29 @@ namespace CarRent.Controllers
             return RedirectToAction("index");
         }
 
+        public ActionResult Edit(CarType i_carType)
+        {
+            if (Request.HttpMethod == "POST")
+            {
+                using (Context con = new Context())
+                {
+                    CarType carTypeToChange = con.CarTypes.Where(c => c.Id == i_carType.Id).FirstOrDefault();
+                    if (carTypeToChange != null)
+                    {
+                        carTypeToChange.DailyCost = i_carType.DailyCost;
+                        carTypeToChange.DelayDailyCost = i_carType.DelayDailyCost;
+                        carTypeToChange.GearBox = i_carType.GearBox;
+                        carTypeToChange.Manufacturer = i_carType.Manufacturer;
+                        carTypeToChange.Model = i_carType.Model;
+                    }
+                    con.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            CarType carT = GetCarTypeById(i_carType.Id);
+            return View(carT);
+        }
+
         private CarType GetCarTypeById(int i_carTypeId)
         {
             using (Context con = new Context())
