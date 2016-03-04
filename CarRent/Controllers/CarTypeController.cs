@@ -32,6 +32,7 @@ namespace CarRent.Controllers
             return RedirectToAction("index");
         }
 
+        //TODO add inovoiceve - client validation
         public ActionResult AddCarType()
         {
             CarType type = new CarType();
